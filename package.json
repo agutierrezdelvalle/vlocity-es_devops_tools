@@ -1,9 +1,9 @@
 {
   "name": "vlocitydctools",
-  "description": "Vlocity ES DC Tools",
-  "version": "0.0.1",
+  "description": "Vlocity DC Tools",
+  "version": "0.0.2",
   "author": "Antonio Gutiérrez",
-  "bugs": "https://github.com/agutierrezdelvalle/vlocity-es_devops_tools/issues",
+  "bugs": "https://github.com/antgutdel/vlocity-es_devops_tools/issues",
   "dependencies": {
     "@oclif/command": "^1",
     "@oclif/config": "^1",
@@ -15,6 +15,7 @@
     "jsforce": "^1.9.3",
     "simple-git": "^3.5.0",
     "tslib": "^1",
+    "vlocitydctools": "^0.0.2",
     "xml2js": "^0.4.22"
   },
   "devDependencies": {
@@ -38,7 +39,7 @@
   "engines": {
     "node": ">=10.10.0"
   },
-  "homepage": "https://github.com/agutierrezdelvalle/vlocity-es_devops_tools",
+  "homepage": "https://www.npmjs.com/package/vlocitydctools",
   "keywords": [
     "sfdx-plugin"
   ],
@@ -48,7 +49,7 @@
     "bin": "sfdx",
     "topics": {
       "vlocitydctools": {
-        "description": "VlocityeESTools distributes certain DevOps Utilities for a Salesforce/Vlocity Project. This tool is not an Official tool from Vlocity or Salesforce. Use it at your own risk."
+        "description": "VlocityDCTools distributes certain DevOps Utilities for a Salesforce/Vlocity Project. This tool is not an Official tool from Vlocity or Salesforce. Use it at your own risk."
       },
       "vlocitydctools:clean": {
         "description": "Cleaning Commands"
@@ -76,11 +77,11 @@
       "@oclif/plugin-help"
     ]
   },
-  "repository": "agutierrezdelvalle/vlocity-es_devops_tools",
+  "repository": "antgutdel/vlocitydctools",
   "scripts": {
-    "postpack": "rm -f oclif.manifest.json",
+    "postpack": "del /q oclif.manifest.json",
     "posttest": "tslint -p test -t stylish",
-    "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "prepack": "rd /s /q lib && tsc -b && oclif-dev manifest && oclif-dev readme",
     "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
     "version": "oclif-dev readme && git add README.md"
   }
