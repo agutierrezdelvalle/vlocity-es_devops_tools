@@ -1,4 +1,4 @@
-Vlocity ES Tools (Beta)
+Vlocity DC Tools (Beta)
 ==============
 
 ##### Disclaimer: This tool is not an offical tool from Vlocity or Salesforce. It was created with the intent of distributing certain uitlility tools, Use it at your own risk.
@@ -7,68 +7,68 @@ Vlocity ES Tools (Beta)
 # Command List
 
 Clean Commands
--  [vlocityestools:clean:epcgkfix](#vlocityestoolscleanepcgkfix)
--  [vlocityestools:clean:omniscripts](#vlocityestoolscleanomniscripts)
--  [vlocityestools:clean:templates](#vlocityestoolscleantemplates)
--  [vlocityestools:clean:cards](#vlocityestoolscleancards)
--  [vlocityestools:clean:datapacks](#vlocityestoolscleandatapacks)
--  [vlocityestools:clean:savedomniscripts](#vlocityestoolscleansavedomniscripts)
--  [vlocityestools:clean:calcmatrix](#vlocityestoolscleancalcmatrix)
--  [vlocityestools:clean:objects](#vlocityestoolscleanobjects)
+-  [vlocitydctools:clean:epcgkfix](#vlocitydctoolscleanepcgkfix)
+-  [vlocitydctools:clean:omniscripts](#vlocitydctoolscleanomniscripts)
+-  [vlocitydctools:clean:templates](#vlocitydctoolscleantemplates)
+-  [vlocitydctools:clean:cards](#vlocitydctoolscleancards)
+-  [vlocitydctools:clean:datapacks](#vlocitydctoolscleandatapacks)
+-  [vlocitydctools:clean:savedomniscripts](#vlocitydctoolscleansavedomniscripts)
+-  [vlocitydctools:clean:calcmatrix](#vlocitydctoolscleancalcmatrix)
+-  [vlocitydctools:clean:objects](#vlocitydctoolscleanobjects)
 
 Compare/ Report
 
--  [vlocityestools:compare:folders](#vlocityestoolscomparefolders)
--  [vlocityestools:report:dependencies:local](#vlocityestoolsreportdependencieslocal)
--  [vlocityestools:report:dependencies:remote](#vlocityestoolsreportdependenciesremote)
--  [vlocityestools:report:activeomniscript](#vlocityestoolsreportactiveomniscript)
+-  [vlocitydctools:compare:folders](#vlocitydctoolscomparefolders)
+-  [vlocitydctools:report:dependencies:local](#vlocitydctoolsreportdependencieslocal)
+-  [vlocitydctools:report:dependencies:remote](#vlocitydctoolsreportdependenciesremote)
+-  [vlocitydctools:report:activeomniscript](#vlocitydctoolsreportactiveomniscript)
 
 SF Source
 
--  [vlocityestools:sfsource:createdeltapackage](#vlocityestoolssfsourcecreatedeltapackage)
--  [vlocityestools:sfsource:createdeltapackagelocal](#vlocityestoolssfsourcecreatedeltapackagelocal)
--  [vlocityestools:sfsource:updatedeltahash](#vlocityestoolssfsourceupdatedeltahash)
--  [vlocityestools:sfsource:createmocklwcos](#vlocityestoolssfsourcecreatemocklwcos)
+-  [vlocitydctools:sfsource:createdeltapackage](#vlocitydctoolssfsourcecreatedeltapackage)
+-  [vlocitydctools:sfsource:createdeltapackagelocal](#vlocitydctoolssfsourcecreatedeltapackagelocal)
+-  [vlocitydctools:sfsource:updatedeltahash](#vlocitydctoolssfsourceupdatedeltahash)
+-  [vlocitydctools:sfsource:createmocklwcos](#vlocitydctoolssfsourcecreatemocklwcos)
 
 Login
 
--  [vlocityestools:login:login](#vlocityestoolsauthlogin)
+-  [vlocitydctools:login:login](#vlocitydctoolsauthlogin)
 
 Data
--  [vlocityestools:data:upsert](#vlocityestoolsdataupsert)
+-  [vlocitydctools:data:upsert](#vlocitydctoolsdataupsert)
 
 CMT 
 
--  [vlocityestools:jobs:executejobs](#vlocityestoolsjobsexecutejobs)
+-  [vlocitydctools:jobs:executejobs](#vlocitydctoolsjobsexecutejobs)
 
 Copado
 
-- [vlocityestools:copado:copadomanifest](#vlocityestoolscopadocopadomanifest)
-- [vlocityestools:copado:copadolist](#vlocityestoolscopadocopadolist)
+- [vlocitydctools:copado:copadomanifest](#vlocitydctoolscopadocopadomanifest)
+- [vlocitydctools:copado:copadolist](#vlocitydctoolscopadocopadolist)
 
 # Install
 ```sh-session
-$ sfdx plugins:install vlocityestools # Requires SFDX-CLI
+$ sfdx plugins:install vlocitydctools # Requires SFDX-CLI
 ```
 
 
 #### Install with no promt:
 ```sh-session
-$ echo "yes" | sfdx plugins:install vlocityestools # Requires SFDX-CLI
+$ echo "yes" | sfdx plugins:install vlocitydctools # Requires SFDX-CLI
 ```
 
 # Usage
 ```sh-session
-$ sfdx vlocityestools:...
+$ sfdx vlocitydctools:...
 
-$ sfdx vlocityestools:... --help
+$ sfdx vlocitydctools:... --help
 ```  
 '    '
 
 # Commands Info:
 
 
-## vlocityestools:clean:epcgkfix 
+## vlocitydctools:clean:epcgkfix 
 
 Sync Global Keys between two orgs (from source to target org) for the descrived objects. If Duplicates are detected, Global Keys wil be updated. 
 Use -v,--check to only check and do not insert the records. 
@@ -175,7 +175,7 @@ AA:
 ```
 USAGE
 
-  $ sfdx vlocityestools:clean:epcgkfix -s <string> -t <string>  [-p cmt] [-c] [-a] [-v]
+  $ sfdx vlocitydctools:clean:epcgkfix -s <string> -t <string>  [-p cmt] [-c] [-a] [-v]
 
 OPTIONS
 
@@ -201,11 +201,11 @@ OPTIONS
 
 EXAMPLES
 
-  $ sfdx vlocityestools:clean:epcgkfix -s myOrg@example.com -t myOrg2@example.com  -p cmt --pci --aa 
+  $ sfdx vlocitydctools:clean:epcgkfix -s myOrg@example.com -t myOrg2@example.com  -p cmt --pci --aa 
   
-  $ sfdx vlocityestools:clean:epcgkfix --source myOrg --target myOrg2 --aa --check
+  $ sfdx vlocitydctools:clean:epcgkfix --source myOrg --target myOrg2 --aa --check
 
-  $ sfdx vlocityestools:clean:epcgkfix --source myOrg --target myOrg2 --aa --check -d def.yaml
+  $ sfdx vlocitydctools:clean:epcgkfix --source myOrg --target myOrg2 --aa --check -d def.yaml
 
 ```
 
@@ -213,7 +213,7 @@ EXAMPLES
 
 
 
-## vlocityestools:clean:omniscripts
+## vlocitydctools:clean:omniscripts
 
 Delete old versions of OmniScritps and Integration Procedures and leave N amount of latest versions
 Active versions will be ignored and wont get deleted.
@@ -221,7 +221,7 @@ Active versions will be ignored and wont get deleted.
 ```
 USAGE
 
-  $ sfdx vlocityestools:clean:omniscripts -u <string> -n <integer> -p <string>
+  $ sfdx vlocitydctools:clean:omniscripts -u <string> -n <integer> -p <string>
 
 OPTIONS
 
@@ -237,14 +237,14 @@ OPTIONS
 
 EXAMPLES
 
-  $ sfdx vlocityestools:clean:omniscripts -u myOrg@example.com -n 10 -p cmt
+  $ sfdx vlocitydctools:clean:omniscripts -u myOrg@example.com -n 10 -p cmt
   
-  $ sfdx vlocityestools:clean:omniscripts --targetusername myOrg@example.com --numberversions 10 --package ins
+  $ sfdx vlocitydctools:clean:omniscripts --targetusername myOrg@example.com --numberversions 10 --package ins
 
 ```
 
 
-## vlocityestools:clean:templates
+## vlocitydctools:clean:templates
 
 Delete old versions of Templates and leave N amount of latest versions.
 Active versions will be ignored and wont get deleted.
@@ -252,7 +252,7 @@ Active versions will be ignored and wont get deleted.
 ```
 USAGE
 
-  $ sfdx vlocityestools:clean:templates -u <string> -n <integer> -p <string>
+  $ sfdx vlocitydctools:clean:templates -u <string> -n <integer> -p <string>
 
 OPTIONS
 
@@ -268,13 +268,13 @@ OPTIONS
 
 EXAMPLES
 
-  $ sfdx vlocityestools:clean:templates -u myOrg@example.com -n 5 -p cmt
+  $ sfdx vlocitydctools:clean:templates -u myOrg@example.com -n 5 -p cmt
   
-  $ sfdx vlocityestools:clean:templates --targetusername myOrg@example.com --numberversions 5 --package ins
+  $ sfdx vlocitydctools:clean:templates --targetusername myOrg@example.com --numberversions 5 --package ins
 
 ```
 
-## vlocityestools:clean:cards
+## vlocitydctools:clean:cards
 
 Delete old versions of Cards and leave N amount of latest versions.
 Active versions will be ignored and wont get deleted.
@@ -282,7 +282,7 @@ Active versions will be ignored and wont get deleted.
 ```
 USAGE
 
-  $ sfdx vlocityestools:clean:cards -u <string> -n <integer> -p <string>
+  $ sfdx vlocitydctools:clean:cards -u <string> -n <integer> -p <string>
 
 OPTIONS
 
@@ -298,20 +298,20 @@ OPTIONS
 
 EXAMPLES
 
-  $ sfdx vlocityestools:clean:cards -u myOrg@example.com -n 5 -p cmt
+  $ sfdx vlocitydctools:clean:cards -u myOrg@example.com -n 5 -p cmt
   
-  $ sfdx vlocityestools:clean:cards --targetusername myOrg@example.com --numberversions 5 --package ins
+  $ sfdx vlocitydctools:clean:cards --targetusername myOrg@example.com --numberversions 5 --package ins
 
 ```
 
-## vlocityestools:clean:datapacks
+## vlocitydctools:clean:datapacks
 
 Delete old DataPacks Used by Vlocity Build Tool
 
 ```
 USAGE
 
-  $ sfdx vlocityestools:clean:datapacks -u <string> -p <string>
+  $ sfdx vlocitydctools:clean:datapacks -u <string> -p <string>
 
 OPTIONS
 
@@ -323,20 +323,20 @@ OPTIONS
 
 EXAMPLES
 
-  $ sfdx vlocityestools:clean:datapacks -u myOrg@example.com  -p cmt
+  $ sfdx vlocitydctools:clean:datapacks -u myOrg@example.com  -p cmt
   
-  $ sfdx vlocityestools:clean:datapacks --targetusername myOrg@example.com  --package ins
+  $ sfdx vlocitydctools:clean:datapacks --targetusername myOrg@example.com  --package ins
 
 ```
 
-## vlocityestools:clean:savedomniscripts
+## vlocitydctools:clean:savedomniscripts
 
 Delete old Saved OmniScripts
 
 ```
 USAGE
 
-  $ sfdx vlocityestools:clean:savedomniscripts -u <string> -p <string>
+  $ sfdx vlocitydctools:clean:savedomniscripts -u <string> -p <string>
 
 OPTIONS
 
@@ -348,13 +348,13 @@ OPTIONS
 
 EXAMPLES
 
-  $ sfdx vlocityestools:clean:savedomniscripts -u myOrg@example.com  -p cmt
+  $ sfdx vlocitydctools:clean:savedomniscripts -u myOrg@example.com  -p cmt
   
-  $ sfdx vlocityestools:clean:savedomniscripts --targetusername myOrg@example.com  --package ins
+  $ sfdx vlocitydctools:clean:savedomniscripts --targetusername myOrg@example.com  --package ins
 
 ```
 
-## vlocityestools:compare:folders
+## vlocitydctools:compare:folders
 
 Compare two local Vlocity DataPacks folder 
 The output will be a CSV file with the results
@@ -362,7 +362,7 @@ The output will be a CSV file with the results
 ```
 USAGE
 
-  $ sfdx vlocityestools:compare:folders -s <string>- t <integer>
+  $ sfdx vlocitydctools:compare:folders -s <string>- t <integer>
 
 OPTIONS
 
@@ -375,20 +375,20 @@ OPTIONS
 
 EXAMPLES
 
-  $ sfdx vlocityestools:compare:folders -s vlocity1 -t vlocity2
+  $ sfdx vlocitydctools:compare:folders -s vlocity1 -t vlocity2
   
-  $ sfdx vlocityestools:compare:folders --folder1 vlocity1 --folder2 vlocity2
+  $ sfdx vlocitydctools:compare:folders --folder1 vlocity1 --folder2 vlocity2
 
 ```
 
-## vlocityestools:compare:packages
+## vlocitydctools:compare:packages
 
 Compare Two Vlocity Metadata Folders. Gives Error if there is overlap
 
 ```
 USAGE
 
-  $ sfdx vlocityestools:compare:packages -s <string>- t <integer>
+  $ sfdx vlocitydctools:compare:packages -s <string>- t <integer>
 
 OPTIONS
 
@@ -401,14 +401,14 @@ OPTIONS
 
 EXAMPLES
   
-  $ sfdx vlocityestools:compare:packages: -s vlocity1 -t vlocity2
+  $ sfdx vlocitydctools:compare:packages: -s vlocity1 -t vlocity2
 
-  $ sfdx vlocityestools:compare:packages --folder1 vlocity1 --folder2 vlocity2
+  $ sfdx vlocitydctools:compare:packages --folder1 vlocity1 --folder2 vlocity2
 
 ```
 
 
-## vlocityestools:report:dependencies:local
+## vlocitydctools:report:dependencies:local
 
 
 From a local DataPack export foler, for Both OmniScript and VIP, 1st Level of dependencies: 
@@ -425,7 +425,7 @@ The output will be a CSV file with the results
 ```
 USAGE
 
-  $ sfdx vlocityestools:report:dependencies:local -f <string>
+  $ sfdx vlocitydctools:report:dependencies:local -f <string>
 
 OPTIONS
 
@@ -435,13 +435,13 @@ OPTIONS
 
 EXAMPLES
 
-  $ sfdx vlocityestools:report:dependencies:local -f vlocity
+  $ sfdx vlocitydctools:report:dependencies:local -f vlocity
   
-  $ sfdx vlocityestools:report:dependencies:local --folder vlocity
+  $ sfdx vlocitydctools:report:dependencies:local --folder vlocity
 
 ```
 
-## vlocityestools:report:dependencies:remote
+## vlocitydctools:report:dependencies:remote
 
 From remote Alias connection, for Both OmniScript and VIP, 1st Level of dependencies: 
 
@@ -457,7 +457,7 @@ The output will be a CSV file with the results
 ```
 USAGE
 
-  $ sfdx vlocityestools:report:dependencies:remote -u <string> -p <string>
+  $ sfdx vlocitydctools:report:dependencies:remote -u <string> -p <string>
 
 OPTIONS
 
@@ -471,20 +471,20 @@ OPTIONS
 
 EXAMPLES
 
-  $ sfdx vlocityestools:report:dependencies:remote -u SIT -p cmt
+  $ sfdx vlocitydctools:report:dependencies:remote -u SIT -p cmt
   
-  $ sfdx vlocityestools:report:dependencies:remote --targetusername myOrg@example.com  --packageType ins
+  $ sfdx vlocitydctools:report:dependencies:remote --targetusername myOrg@example.com  --packageType ins
 
 ```
 
-## vlocityestools:report:activeomniscript
+## vlocitydctools:report:activeomniscript
 
 Check All OmniScrips are Active
 
 ```
 USAGE
 
-  $ sfdx vlocityestools:report:activeomniscript -u <string> -p <string>
+  $ sfdx vlocitydctools:report:activeomniscript -u <string> -p <string>
 
 OPTIONS
 
@@ -498,13 +498,13 @@ OPTIONS
 
 EXAMPLES
 
-  $ sfdx vlocityestools:report:activeomniscript -u myOrg@example.com -p cmt
+  $ sfdx vlocitydctools:report:activeomniscript -u myOrg@example.com -p cmt
   
-  $ sfdx vlocityestools:report:activeomniscript  --targetusername myOrg@example.com --package ins
+  $ sfdx vlocitydctools:report:activeomniscript  --targetusername myOrg@example.com --package ins
 
 ```
 
-## vlocityestools:sfsource:createdeltapackage
+## vlocitydctools:sfsource:createdeltapackage
 
 Based on Vlocity Build Tool saved Hash in the Environment, Create Delta package for salforce.
 Note: Only works for SFDX Source Format
@@ -515,7 +515,7 @@ Note: Only works for SFDX Source Format
 ```
 USAGE,
 
-  $ sfdx vlocityestools:sfsource:createdeltapackage -u <string> -d<string> [-k <string>] [-p <string>] [-c <string> -v <string>]
+  $ sfdx vlocitydctools:sfsource:createdeltapackage -u <string> -d<string> [-k <string>] [-p <string>] [-c <string> -v <string>]
 
 OPTIONS
 
@@ -541,17 +541,17 @@ OPTIONS IF USING a Custom "Custom Settings"
 
 EXAMPLES
 
-  $ sfdx vlocityestools:sfsource:createdeltapackage -u myOrg@example.com -p cmt -d force-app
+  $ sfdx vlocitydctools:sfsource:createdeltapackage -u myOrg@example.com -p cmt -d force-app
   
-  $ sfdx vlocityestools:sfsource:createdeltapackage --targetusername myOrg@example.com --package ins --sourcefolder force-app
+  $ sfdx vlocitydctools:sfsource:createdeltapackage --targetusername myOrg@example.com --package ins --sourcefolder force-app
 
-  $ sfdx vlocityestools:sfsource:createdeltapackage --targetusername myOrg@example.com --package ins --sourcefolder force-app --gitcheckkey EPC
+  $ sfdx vlocitydctools:sfsource:createdeltapackage --targetusername myOrg@example.com --package ins --sourcefolder force-app --gitcheckkey EPC
 
-  $ sfdx vlocityestools:sfsource:createdeltapackage --targetusername myOrg@example.com --sourcefolder force-app --gitcheckkeykustom VBTDeployKey --customsettingobject DevOpsSettings__c
+  $ sfdx vlocitydctools:sfsource:createdeltapackage --targetusername myOrg@example.com --sourcefolder force-app --gitcheckkeykustom VBTDeployKey --customsettingobject DevOpsSettings__c
 
 ```
 
-## vlocityestools:sfsource:createdeltapackagelocal
+## vlocitydctools:sfsource:createdeltapackagelocal
 
 Create Delta package for salforce based on HEAD and Input Hash.
 Note: Only works for SFDX Source Format
@@ -559,7 +559,7 @@ Note: Only works for SFDX Source Format
 ```
 USAGE,
 
-  $ sfdx vlocityestools:sfsource:createdeltapackagelocal -h <string> -d<string> 
+  $ sfdx vlocitydctools:sfsource:createdeltapackagelocal -h <string> -d<string> 
 
 OPTIONS
 
@@ -571,20 +571,20 @@ OPTIONS
 
 EXAMPLES
 
-  $ sfdx vlocityestools:sfsource:createdeltapackagelocal -h f2a6eee1b509c3edd33ab070148be48e41242846 -d force-app
+  $ sfdx vlocitydctools:sfsource:createdeltapackagelocal -h f2a6eee1b509c3edd33ab070148be48e41242846 -d force-app
   
-  $ sfdx vlocityestools:sfsource:createdeltapackagelocal --hash f2a6eee1b509c3edd33ab070148be48e41242846 --sourcefolder salesforce_sfdx
+  $ sfdx vlocitydctools:sfsource:createdeltapackagelocal --hash f2a6eee1b509c3edd33ab070148be48e41242846 --sourcefolder salesforce_sfdx
 
 ```
 
-## vlocityestools:sfsource:updatedeltahash
+## vlocitydctools:sfsource:updatedeltahash
 
 When using a Custom "Custom Setting" Object for delta Package. You can update the hash in the environment using this command.
 
 ```
 USAGE,
 
-  $ sfdx vlocityestools:sfsource:createdeltapackage -u <string> -p <string> -d<string> [-h <string>]
+  $ sfdx vlocitydctools:sfsource:createdeltapackage -u <string> -p <string> -d<string> [-h <string>]
 
 OPTIONS
 
@@ -604,15 +604,15 @@ OPTIONS
 
 EXAMPLES
 
-  $ sfdx vlocityestools:sfsource:updatedeltahash  -c DevOpsSettings__c -v DeployKey -u myOrg@example.com
+  $ sfdx vlocitydctools:sfsource:updatedeltahash  -c DevOpsSettings__c -v DeployKey -u myOrg@example.com
 
-  $ sfdx vlocityestools:sfsource:updatedeltahash  --customsettingobject DevOpsSettings__c --gitcheckkeycustom DeployKey --targetusername myOrg@example.com
+  $ sfdx vlocitydctools:sfsource:updatedeltahash  --customsettingobject DevOpsSettings__c --gitcheckkeycustom DeployKey --targetusername myOrg@example.com
    
-  $ sfdx vlocityestools:sfsource:updatedeltahash  --customsettingobject DevOpsSettings__c --gitcheckkeycustom DeployKey --targetusername myOrg@example.com --customhash 0603ab92ff7cf9adf7ca10228807f6bb6b57a894
+  $ sfdx vlocitydctools:sfsource:updatedeltahash  --customsettingobject DevOpsSettings__c --gitcheckkeycustom DeployKey --targetusername myOrg@example.com --customhash 0603ab92ff7cf9adf7ca10228807f6bb6b57a894
 
 ```
 
-## vlocityestools:clean:calcmatrix
+## vlocitydctools:clean:calcmatrix
 
 This command will delete all rows of the Calculation Matrix Version based on the given ID as input. Then, it will update the version record with Dummy data so any other version can be Deployed. The Calculation Matrix Version can be delete after 24 hors due to Salesforce sweeper restrictions.
 You can assign the user used to run this comnad a Permisison set or a profile that has the Bulk API hard delte to avoid the need of deleting the rows from the recycle bin.
@@ -620,7 +620,7 @@ You can assign the user used to run this comnad a Permisison set or a profile th
 ```
 USAGE
 
-  $ sfdx vlocityestools:clean:calcmatrix -u <string> -i <string> -P<string>
+  $ sfdx vlocitydctools:clean:calcmatrix -u <string> -i <string> -P<string>
 
 OPTIONS
 
@@ -637,13 +637,13 @@ OPTIONS
 
 EXAMPLES
 
-  $ sfdx vlocityestools:clean:calcmatrix -u myOrg@example.com -i a0dR000000kxD4qIAE -p ins
+  $ sfdx vlocitydctools:clean:calcmatrix -u myOrg@example.com -i a0dR000000kxD4qIAE -p ins
   
-  $ sfdx vlocityestools:clean:calcmatrix --targetusername myOrg@example.com --matrixid a0dR000000kxD4qIAE --package cmt
+  $ sfdx vlocitydctools:clean:calcmatrix --targetusername myOrg@example.com --matrixid a0dR000000kxD4qIAE --package cmt
 
 ```
 
-## vlocityestools:auth:login
+## vlocitydctools:auth:login
 
 Create an Alias using User and Password,  (Token if needed as wells)
 Note: This will not create an Alias with OAuth Connnection so the connection will expired.
@@ -651,7 +651,7 @@ Note: This will not create an Alias with OAuth Connnection so the connection wil
 ```
 USAGE
 
-  $ sfdx vlocityestools:auth:login -u <string> -p <string> -a <string> [-l <string>] [-t <string>]
+  $ sfdx vlocitydctools:auth:login -u <string> -p <string> -a <string> [-l <string>] [-t <string>]
 
 OPTIONS
 
@@ -670,14 +670,14 @@ OPTIONS
 
 EXAMPLES
 
-  $ sfdx vlocityestools:auth:login -u jgonzalez@vlocity.com.de1 -p 'pass123' -t eXUTfa9gpIxfaytnONqnlWFG -a dev1
+  $ sfdx vlocitydctools:auth:login -u jgonzalez@vlocity.com.de1 -p 'pass123' -t eXUTfa9gpIxfaytnONqnlWFG -a dev1
   
-  $ sfdx vlocityestools:auth:login --username jgonzalez@vlocity.com.de1 --password 'pass123' --url 'https://test.salesforce.com' --alias dev1
+  $ sfdx vlocitydctools:auth:login --username jgonzalez@vlocity.com.de1 --password 'pass123' --url 'https://test.salesforce.com' --alias dev1
 
 ```
 
 
-## vlocityestools:clean:objects
+## vlocitydctools:clean:objects
 
 Delets SObjects from org defined by File. SOQL 'WHERE' can be specified
 
@@ -765,7 +765,7 @@ Objects:
 ```
 USAGE
 
-  $ sfdx vlocityestools:clean:objects -u <string> -p <string> -d <string> [-q true|false] [-r true|false] [-s true|false]
+  $ sfdx vlocitydctools:clean:objects -u <string> -p <string> -d <string> [-q true|false] [-r true|false] [-s true|false]
 
 OPTIONS
 
@@ -792,27 +792,27 @@ OPTIONS
                                                                     
 EXAMPLES
 
-  $ sfdx vlocityestools:clean:objects -u myOrg@example.com -p ins -d objects.yaml
+  $ sfdx vlocitydctools:clean:objects -u myOrg@example.com -p ins -d objects.yaml
   
-  $ sfdx vlocityestools:clean:objects --targetusername myOrg@example.com --dataFile objects.yaml
+  $ sfdx vlocitydctools:clean:objects --targetusername myOrg@example.com --dataFile objects.yaml
 
-  $ sfdx vlocityestools:clean:objects --targetusername myOrg@example.com --dataFile objects.yaml -q true
+  $ sfdx vlocitydctools:clean:objects --targetusername myOrg@example.com --dataFile objects.yaml -q true
 
-  $ sfdx vlocityestools:clean:objects --targetusername myOrg@example.com --dataFile objects.yaml -r true
+  $ sfdx vlocitydctools:clean:objects --targetusername myOrg@example.com --dataFile objects.yaml -r true
 
-  $ sfdx vlocityestools:clean:objects --targetusername myOrg@example.com --dataFile objects.yaml -q true
+  $ sfdx vlocitydctools:clean:objects --targetusername myOrg@example.com --dataFile objects.yaml -q true
 
 ```
 
 
-## vlocityestools:sfsource:createmocklwcos
+## vlocitydctools:sfsource:createmocklwcos
 
 Deploy Empty LWC for Missing OmniScript
 
 ```
 USAGE
 
-  $ sfdx vlocityestools:sfsource:createmocklwcoss -d <string> -u <string>
+  $ sfdx vlocitydctools:sfsource:createmocklwcoss -d <string> -u <string>
 
 OPTIONS
 
@@ -823,22 +823,22 @@ OPTIONS
 
 EXAMPLES
 
-  $ sfdx vlocityestools:sfsource:createmocklwcos -u myOrg@example.com -d vlocity
+  $ sfdx vlocitydctools:sfsource:createmocklwcos -u myOrg@example.com -d vlocity
   
-  $ sfdx vlocityestools:sfsource:createmocklwcos --targetusername myOrg@example.com --datapacksfolder vlocity
+  $ sfdx vlocitydctools:sfsource:createmocklwcos --targetusername myOrg@example.com --datapacksfolder vlocity
 
 ```
 
 
 
-## vlocityestools:data:upsert
+## vlocitydctools:data:upsert
 
 Upsert Data From CSV
 
 ```
 USAGE
 
-  $ sfdx vlocityestools:data:upsert -u <string> -f <string> -o <string> -i <string>
+  $ sfdx vlocitydctools:data:upsert -u <string> -f <string> -o <string> -i <string>
 
 OPTIONS
 
@@ -852,20 +852,20 @@ OPTIONS
 
 EXAMPLES
 
-  $ sfdx vlocityestools:data:upsert -u myOrg@example.com -f accounts.csv -o Account -i Name2__c
+  $ sfdx vlocitydctools:data:upsert -u myOrg@example.com -f accounts.csv -o Account -i Name2__c
   
-  $ sfdx vlocityestools:data:upsert --targetusername --csv accounts.csv --object Account --id Name2__c
+  $ sfdx vlocitydctools:data:upsert --targetusername --csv accounts.csv --object Account --id Name2__c
 
 ```
 
-## vlocityestools:data:updatefield
+## vlocitydctools:data:updatefield
 
 Bulk Update a field with one value. Optional "WHERE" to filter records
 
 ```
 USAGE
 
-  $ sfdx vlocityestools:data:updatefield -o <string> -f <string> -v <string> [-w <string>] -u <string>
+  $ sfdx vlocitydctools:data:updatefield -o <string> -f <string> -v <string> [-w <string>] -u <string>
 
 OPTIONS
 
@@ -881,14 +881,14 @@ OPTIONS
 
 EXAMPLES
 
-  $ sfdx vlocityestools:data:updatefield -u myOrg@example.com -o Product2 -f IsActive -v true
+  $ sfdx vlocitydctools:data:updatefield -u myOrg@example.com -o Product2 -f IsActive -v true
 
-  $ sfdx vlocityestools:data:updatefield --targetusername myOrg@example.com --object Product2 --field IsActive --value false --where "ProductCode LIKE 'VLO%'"
+  $ sfdx vlocitydctools:data:updatefield --targetusername myOrg@example.com --object Product2 --field IsActive --value false --where "ProductCode LIKE 'VLO%'"
 
 ```
 
 
-## vlocityestools:jobs:executejobs
+## vlocitydctools:jobs:executejobs
 
 CMT Jobs Automation (Only for CMT Package). Based on the Jobs file, it will run then in sequence.
 
@@ -968,7 +968,7 @@ jobs:
 ```
 USAGE
 
-  $ sfdx vlocityestools:jobs:executejobs [-j <string>] [-p <integer>] [-s] [-m] [-l] [-u <string>]
+  $ sfdx vlocitydctools:jobs:executejobs [-j <string>] [-p <integer>] [-s] [-m] [-l] [-u <string>]
 
 OPTIONS
 
@@ -986,25 +986,25 @@ OPTIONS
 
 EXAMPLES
 
-  $ sfdx vlocityestools:jobs:executejobs -u myOrg@example.com -j jobs.yaml -p 20
+  $ sfdx vlocitydctools:jobs:executejobs -u myOrg@example.com -j jobs.yaml -p 20
 
-  $ sfdx vlocityestools:jobs:executejobs --targetusername myOrg@example.com  --jobs jobs.yaml --pooltime 20
+  $ sfdx vlocitydctools:jobs:executejobs --targetusername myOrg@example.com  --jobs jobs.yaml --pooltime 20
 
-  $ sfdx vlocityestools:jobs:executejobs --targetusername myOrg@example.com  --jobs jobs.yaml --pooltime 20 --remoteapex
+  $ sfdx vlocitydctools:jobs:executejobs --targetusername myOrg@example.com  --jobs jobs.yaml --pooltime 20 --remoteapex
 
 ```
 
 
 
 
-## vlocityestools:copado:copadomanifest
+## vlocitydctools:copado:copadomanifest
 
 Creates Json for bulk commit a User Story in Copado
 
 ```
 USAGE,
 
-  $ sfdx vlocityestools:copado:copadomanifest -p <string> [-n <string>] [-s]
+  $ sfdx vlocitydctools:copado:copadomanifest -p <string> [-n <string>] [-s]
 
 OPTIONS
 
@@ -1017,21 +1017,21 @@ OPTIONS
 
 EXAMPLES
 
-  $ sfdx vlocityestools:copado:copadomanifest -p package.xml
+  $ sfdx vlocitydctools:copado:copadomanifest -p package.xml
 
-  $ sfdx vlocityestools:copado:copadomanifest --package package.xml --username User123 --vlocity
+  $ sfdx vlocitydctools:copado:copadomanifest --package package.xml --username User123 --vlocity
 
 ```
 
 
-## vlocityestools:copado:copadolist
+## vlocitydctools:copado:copadolist
 
 Creates Json to Bulk Update an User Story from a List of <Type>.<API Name> Text File
 
 ```
 USAGE,
 
-  $ sfdx vlocityestools copado copadolist -m <string> [-n <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+  $ sfdx vlocitydctools copado copadolist -m <string> [-n <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 OPTIONS
 
@@ -1042,8 +1042,8 @@ OPTIONS
 
 EXAMPLES
 
-  $ sfdx vlocityestools:copado:copadolist -m manifest.txt
+  $ sfdx vlocitydctools:copado:copadolist -m manifest.txt
 
-  $ sfdx vlocityestools:copado:copadolist --manifest manifest.txt --username User123
+  $ sfdx vlocitydctools:copado:copadolist --manifest manifest.txt --username User123
 
 ```

@@ -27,16 +27,16 @@ var resultsFile = './Dependencies_Report_Remote.csv';
 
 // Load the specific messages for this file. Messages from @salesforce/command, @salesforce/core,
 // or any library that is using the messages framework can also be loaded this way.
-const messages = Messages.loadMessages('vlocityestools', 'reportdependenciesremote');
+const messages = Messages.loadMessages('vlocitydctools', 'reportdependenciesremote');
 
 export default class remote extends SfdxCommand {
 
   public static description = messages.getMessage('commandDescription');
 
   public static examples = [
-  `$ sfdx vlocityestools:report:dependencies:remote -u SIT -p cmt
+  `$ sfdx vlocitydctools:report:dependencies:remote -u SIT -p cmt
   `,
-  `$ sfdx vlocityestools:report:dependencies:remote --targetusername myOrg@example.com --packageType ins
+  `$ sfdx vlocitydctools:report:dependencies:remote --targetusername myOrg@example.com --packageType ins
   `
   ];
 

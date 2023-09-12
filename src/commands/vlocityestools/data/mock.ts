@@ -8,16 +8,16 @@ Messages.importMessagesDirectory(__dirname);
 
 // Load the specific messages for this file. Messages from @salesforce/command, @salesforce/core,
 // or any library that is using the messages framework can also be loaded this way.
-const messages = Messages.loadMessages('vlocityestools', 'mock');
+const messages = Messages.loadMessages('vlocitydctools', 'mock');
 
 export default class upsert extends SfdxCommand {
 
   public static description = messages.getMessage('commandDescription');
 
   public static examples = [
-  `$ sfdx vlocityestools:data:mock -u myOrg@example.com -o Account -c 10000
+  `$ sfdx vlocitydctools:data:mock -u myOrg@example.com -o Account -c 10000
   `,
-  `$ sfdx vlocityestools:data:mock --targetusername --object count --id 10000
+  `$ sfdx vlocitydctools:data:mock --targetusername --object count --id 10000
   `
   ];
 

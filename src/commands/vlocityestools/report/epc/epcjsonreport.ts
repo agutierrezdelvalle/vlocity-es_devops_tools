@@ -7,7 +7,7 @@ Messages.importMessagesDirectory(__dirname);
 
 // Load the specific messages for this file. Messages from @salesforce/command, @salesforce/core,
 // or any library that is using the messages framework can also be loaded this way.
-const messages = Messages.loadMessages('vlocityestools', 'epcjsonreport');
+const messages = Messages.loadMessages('vlocitydctools', 'epcjsonreport');
 
 const fsExtra = require("fs-extra");
 const yaml = require('js-yaml');
@@ -25,9 +25,9 @@ export default class epcJsonExport extends SfdxCommand {
   public static description = messages.getMessage('commandDescription');
 
   public static examples = [
-  `$ sfdx vlocityestools:report:epc:epcjsonreport -u myOrg@example.com -p cmt -d data.yaml
+  `$ sfdx vlocitydctools:report:epc:epcjsonreport -u myOrg@example.com -p cmt -d data.yaml
   `,
-  `$ sfdx vlocityestools:report:epc:epcjsonreport --targetusername myOrg@example.com --package ins --datafile data.yaml
+  `$ sfdx vlocitydctools:report:epc:epcjsonreport --targetusername myOrg@example.com --package ins --datafile data.yaml
   `
   ];
 

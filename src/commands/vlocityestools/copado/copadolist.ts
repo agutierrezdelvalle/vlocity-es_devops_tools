@@ -9,16 +9,16 @@ const fsExtra = require("fs-extra");
 
 // Load the specific messages for this file. Messages from @salesforce/command, @salesforce/core,
 // or any library that is using the messages framework can also be loaded this way.
-const messages = Messages.loadMessages('vlocityestools', 'copadolist');
+const messages = Messages.loadMessages('vlocitydctools', 'copadolist');
 
 export default class copadolist extends SfdxCommand {
 
   public static description = messages.getMessage('commandDescription');
 
   public static examples = [
-  `$ sfdx vlocityestools:copado:copadolist -m manifest.txt
+  `$ sfdx vlocitydctools:copado:copadolist -m manifest.txt
   `,
-  `$ sfdx vlocityestools:copado:copadolist --manifest manifest.txt --username User123
+  `$ sfdx vlocitydctools:copado:copadolist --manifest manifest.txt --username User123
   `
   ];
 

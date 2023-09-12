@@ -9,7 +9,7 @@ Messages.importMessagesDirectory(__dirname);
 
 // Load the specific messages for this file. Messages from @salesforce/command, @salesforce/core,
 // or any library that is using the messages framework can also be loaded this way.
-const messages = Messages.loadMessages('vlocityestools', 'login');
+const messages = Messages.loadMessages('vlocitydctools', 'login');
 
 
 export default class login extends SfdxCommand {
@@ -17,9 +17,9 @@ export default class login extends SfdxCommand {
   public static description = messages.getMessage('commandDescription');
 
   public static examples = [
-  `$ sfdx vlocityestools:login:login -u jgonzalez@vlocity.com.de1 -p 'pass123' -t eXUTfa9gpIxfaytnONqnlWFG -a dev1
+  `$ sfdx vlocitydctools:login:login -u jgonzalez@vlocity.com.de1 -p 'pass123' -t eXUTfa9gpIxfaytnONqnlWFG -a dev1
   `,
-  `$ sfdx vlocityestools:login:login --username jgonzalez@vlocity.com.de1 --password 'pass123' --token eXUTfa9gpIxfaytnONqnlWFG --url 'https://test.salesforce.com' --alias dev1
+  `$ sfdx vlocitydctools:login:login --username jgonzalez@vlocity.com.de1 --password 'pass123' --token eXUTfa9gpIxfaytnONqnlWFG --url 'https://test.salesforce.com' --alias dev1
   `
   ];
 

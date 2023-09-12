@@ -8,16 +8,16 @@ Messages.importMessagesDirectory(__dirname);
 
 // Load the specific messages for this file. Messages from @salesforce/command, @salesforce/core,
 // or any library that is using the messages framework can also be loaded this way.
-const messages = Messages.loadMessages('vlocityestools', 'oldomniscripts');
+const messages = Messages.loadMessages('vlocitydctools', 'oldomniscripts');
 
 export default class deleteOldOS extends SfdxCommand {
 
   public static description = messages.getMessage('commandDescription');
 
   public static examples = [
-  `$ sfdx vlocityestools:clean:omniscripts -u myOrg@example.com -n 5 -p cmt
+  `$ sfdx vlocitydctools:clean:omniscripts -u myOrg@example.com -n 5 -p cmt
   `,
-  `$ sfdx vlocityestools:clean:omniscripts --targetusername myOrg@example.com --numberversions 5 --package ins
+  `$ sfdx vlocitydctools:clean:omniscripts --targetusername myOrg@example.com --numberversions 5 --package ins
   `
   ];
 
@@ -54,17 +54,17 @@ export default class deleteOldOS extends SfdxCommand {
 
       if(versionsToKeep > 0){
         // this.org is guaranteed because requiresUsername=true, as opposed to supportsUsername
-        const initialQuery = 'SELECT ID, Name, %name-space%Version__c, %name-space%IsActive__c, %name-space%Language__c, %name-space%Type__c, %name-space%SubType__c FROM %name-space%OmniScript__c  Order By Name, %name-space%Language__c, %name-space%Type__c,%name-space%SubType__c, %name-space%Version__c DESC';
+        const initialQuery = 'SELECT ID, Name, VersionNumber, IsActive, Language, Type, SubType FROM OmniProcess Order By Name, Language, Type, SubType, VersionNumber DESC';
         const query = AppUtils.replaceaNameSpace(initialQuery);
         // Query the org
         var result = await DBUtils.bulkAPIquery(conn,query);
         // The output and --json will automatically be handled for you.
         var nameField = 'Name';
-        var languageField = AppUtils.replaceaNameSpace('%name-space%Language__c');
-        var typeField = AppUtils.replaceaNameSpace('%name-space%Type__c');
-        var subTypeField = AppUtils.replaceaNameSpace('%name-space%SubType__c');
-        var isActiveField  = AppUtils.replaceaNameSpace('%name-space%IsActive__c');
-        var versionField  = AppUtils.replaceaNameSpace('%name-space%Version__c');
+        var languageField = AppUtils.replaceaNameSpace('Language');
+        var typeField = AppUtils.replaceaNameSpace('Type');
+        var subTypeField = AppUtils.replaceaNameSpace('SubType');
+        var isActiveField  = AppUtils.replaceaNameSpace('IsActive');
+        var versionField  = AppUtils.replaceaNameSpace('VersionNumber');
 
         if(result.length == 0) {
            AppUtils.log2('No OmniScritps in the Org');
@@ -102,7 +102,7 @@ export default class deleteOldOS extends SfdxCommand {
 
           if(OStoDetele.length > 0){
             AppUtils.log3("Deleting Old OmniScrips");
-            var OSAPIName = AppUtils.replaceaNameSpace('%name-space%OmniScript__c');
+            var OSAPIName = AppUtils.replaceaNameSpace('OmniProcess');
             await DBUtils.bulkAPIdelete(OStoDetele,conn,OSAPIName,false,false,null,120);
           } else {
             AppUtils.log2("Nothing to delete");

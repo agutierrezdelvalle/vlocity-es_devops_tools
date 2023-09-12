@@ -8,16 +8,16 @@ Messages.importMessagesDirectory(__dirname);
 
 // Load the specific messages for this file. Messages from @salesforce/command, @salesforce/core,
 // or any library that is using the messages framework can also be loaded this way.
-const messages = Messages.loadMessages('vlocityestools', 'oldcards');
+const messages = Messages.loadMessages('vlocitydctools', 'oldcards');
 
 export default class deleteOldCards extends SfdxCommand {
 
   public static description = messages.getMessage('commandDescription');
 
   public static examples = [
-  `$ sfdx vlocityestools:clean:cards -u myOrg@example.com -n 5 -p cmt
+  `$ sfdx vlocitydctools:clean:cards -u myOrg@example.com -n 5 -p cmt
   `,
-  `$ sfdx vlocityestools:clean:cards --targetusername myOrg@example.com --numberversions 5 --package ins
+  `$ sfdx vlocitydctools:clean:cards --targetusername myOrg@example.com --numberversions 5 --package ins
   `
   ];
 
@@ -56,9 +56,7 @@ export default class deleteOldCards extends SfdxCommand {
     if(versionsToKeep > 1){
       // this.org is guaranteed because requiresUsername=true, as opposed to supportsUsername
       const conn = this.org.getConnection();
-      const initialQuery = 'SELECT Id, Name, %name-space%Active__c,%name-space%Version__c,%name-space%Type__c ' +
-                           'FROM %name-space%VlocityCard__c ' +
-                           'ORDER BY Name, %name-space%Version__c DESC'
+      const initialQuery = 'SELECT Id, Name, isActive, VersionNumber, OmniUiCardType FROM OmniUiCard ORDER BY Name, VersionNumber DESC'
       
       const query = AppUtils.replaceaNameSpace(initialQuery);
       // Query the org
@@ -71,8 +69,8 @@ export default class deleteOldCards extends SfdxCommand {
 
 
       var nameField = 'Name';
-      var isActiveField  = AppUtils.replaceaNameSpace('%name-space%Active__c');
-      var versionField  = AppUtils.replaceaNameSpace('%name-space%Version__c');
+      var isActiveField  = AppUtils.replaceaNameSpace('isActive');
+      var versionField  = AppUtils.replaceaNameSpace('VersionNumber');
 
       var firstresult = result.records[0]
       var currentComp = firstresult[nameField]

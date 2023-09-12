@@ -8,7 +8,7 @@ Messages.importMessagesDirectory(__dirname);
 
 // Load the specific messages for this file. Messages from @salesforce/command, @salesforce/core,
 // or any library that is using the messages framework can also be loaded this way.
-const messages = Messages.loadMessages('vlocityestools', 'reportdependencieslocal');
+const messages = Messages.loadMessages('vlocitydctools', 'reportdependencieslocal');
 
 var dependenciesFound = 0;
 
@@ -17,9 +17,9 @@ export default class local extends SfdxCommand {
   public static description = messages.getMessage('commandDescription');
 
   public static examples = [
-  `$ sfdx vlocityestools:report:dependencies:local -f vlocity
+  `$ sfdx vlocitydctools:report:dependencies:local -f vlocity
   `,
-  `$ sfdx vlocityestools:report:dependencies:local --folder vlocity
+  `$ sfdx vlocitydctools:report:dependencies:local --folder vlocity
   `
   ];
 

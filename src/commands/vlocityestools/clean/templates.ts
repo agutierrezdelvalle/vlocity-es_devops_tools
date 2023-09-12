@@ -8,16 +8,16 @@ Messages.importMessagesDirectory(__dirname);
 
 // Load the specific messages for this file. Messages from @salesforce/command, @salesforce/core,
 // or any library that is using the messages framework can also be loaded this way.
-const messages = Messages.loadMessages('vlocityestools', 'oldtemplates');
+const messages = Messages.loadMessages('vlocitydctools', 'oldtemplates');
 
 export default class deleteOldTemplates extends SfdxCommand {
 
   public static description = messages.getMessage('commandDescription');
 
   public static examples = [
-  `$ sfdx vlocityestools:clean:templates -u myOrg@example.com -n 5 -p cmt
+  `$ sfdx vlocitydctools:clean:templates -u myOrg@example.com -n 5 -p cmt
   `,
-  `$ sfdx vlocityestools:clean:templates --targetusername myOrg@example.com --numberversions 5 --package ins
+  `$ sfdx vlocitydctools:clean:templates --targetusername myOrg@example.com --numberversions 5 --package ins
   `
   ];
 

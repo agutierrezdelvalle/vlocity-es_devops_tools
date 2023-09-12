@@ -8,16 +8,16 @@ Messages.importMessagesDirectory(__dirname);
 
 // Load the specific messages for this file. Messages from @salesforce/command, @salesforce/core,
 // or any library that is using the messages framework can also be loaded this way.
-const messages = Messages.loadMessages('vlocityestools', 'calcmatrix');
+const messages = Messages.loadMessages('vlocitydctools', 'calcmatrix');
 
 export default class deleteCalMatrix extends SfdxCommand {
 
   public static description = messages.getMessage('commandDescription');
 
   public static examples = [
-  `$ sfdx vlocityestools:clean:calcmatrix -u myOrg@example.com -i a0dR000000kxD4qIAE -p ins
+  `$ sfdx vlocitydctools:clean:calcmatrix -u myOrg@example.com -i a0dR000000kxD4qIAE -p ins
   `,
-  `$ sfdx vlocityestools:clean:calcmatrix --targetusername myOrg@example.com --matrixid a0dR000000kxD4qIAE --package cmt
+  `$ sfdx vlocitydctools:clean:calcmatrix --targetusername myOrg@example.com --matrixid a0dR000000kxD4qIAE --package cmt
   `
   ];
 

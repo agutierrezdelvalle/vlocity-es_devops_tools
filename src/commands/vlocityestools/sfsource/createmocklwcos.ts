@@ -7,7 +7,7 @@ Messages.importMessagesDirectory(__dirname);
 
 // Load the specific messages for this file. Messages from @salesforce/command, @salesforce/core,
 // or any library that is using the messages framework can also be loaded this way.
-const messages = Messages.loadMessages("vlocityestools", "createmocklwcos");
+const messages = Messages.loadMessages("vlocitydctools", "createmocklwcos");
 
 const fsExtra = require("fs-extra");
 const path = require('path');
@@ -16,9 +16,9 @@ export default class createMockLWCOS extends SfdxCommand {
   public static description = messages.getMessage("commandDescription");
 
   public static examples = [
-    `$ sfdx vlocityestools:sfsource:createmocklwcos -u myOrg@example.com -d vlocity
+    `$ sfdx vlocitydctools:sfsource:createmocklwcos -u myOrg@example.com -d vlocity
   `,
-    `$ sfdx vlocityestools:sfsource:createmocklwcos --targetusername myOrg@example.com --datapacksfolder vlocity
+    `$ sfdx vlocitydctools:sfsource:createmocklwcos --targetusername myOrg@example.com --datapacksfolder vlocity
   `
   ];
 

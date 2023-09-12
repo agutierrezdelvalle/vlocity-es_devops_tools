@@ -11,16 +11,16 @@ const fsExtra = require("fs-extra");
 
 // Load the specific messages for this file. Messages from @salesforce/command, @salesforce/core,
 // or any library that is using the messages framework can also be loaded this way.
-const messages = Messages.loadMessages('vlocityestools', 'objects');
+const messages = Messages.loadMessages('vlocitydctools', 'objects');
 
 export default class cleanObjects extends SfdxCommand {
 
   public static description = messages.getMessage('commandDescription');
 
   public static examples = [
-  `$ sfdx vlocityestools:clean:objects -u myOrg@example.com -p ins -d objects.yaml
+  `$ sfdx vlocitydctools:clean:objects -u myOrg@example.com -p ins -d objects.yaml
   `,
-  `$ sfdx vlocityestools:clean:objects --targetusername myOrg@example.com --dataFile objects.yaml
+  `$ sfdx vlocitydctools:clean:objects --targetusername myOrg@example.com --dataFile objects.yaml
   `
   ];
 

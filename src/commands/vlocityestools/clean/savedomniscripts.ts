@@ -7,16 +7,16 @@ Messages.importMessagesDirectory(__dirname);
 
 // Load the specific messages for this file. Messages from @salesforce/command, @salesforce/core,
 // or any library that is using the messages framework can also be loaded this way.
-const messages = Messages.loadMessages('vlocityestools', 'oldsavedomniscripts');
+const messages = Messages.loadMessages('vlocitydctools', 'oldsavedomniscripts');
 
 export default class deleteOldSavedOS extends SfdxCommand {
 
   public static description = messages.getMessage('commandDescription');
 
   public static examples = [
-  `$ sfdx vlocityestools:clean:savedomniscripts -u myOrg@example.com -p cmt
+  `$ sfdx vlocitydctools:clean:savedomniscripts -u myOrg@example.com -p cmt
   `,
-  `$ sfdx vlocityestools:clean:savedomniscripts --targetusername myOrg@example.com --package ins
+  `$ sfdx vlocitydctools:clean:savedomniscripts --targetusername myOrg@example.com --package ins
   `
   ];
 

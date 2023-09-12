@@ -8,16 +8,16 @@ Messages.importMessagesDirectory(__dirname);
 
 // Load the specific messages for this file. Messages from @salesforce/command, @salesforce/core,
 // or any library that is using the messages framework can also be loaded this way.
-const messages = Messages.loadMessages('vlocityestools', 'olddatapacks');
+const messages = Messages.loadMessages('vlocitydctools', 'olddatapacks');
 
 export default class deleteOldDataPacks extends SfdxCommand {
 
   public static description = messages.getMessage('commandDescription');
 
   public static examples = [
-  `$ sfdx vlocityestools:clean:datapacks-u myOrg@example.com -p cmt
+  `$ sfdx vlocitydctools:clean:datapacks-u myOrg@example.com -p cmt
   `,
-  `$ sfdx vlocityestools:clean:datapacks --targetusername myOrg@example.com --package ins
+  `$ sfdx vlocitydctools:clean:datapacks --targetusername myOrg@example.com --package ins
   `
   ];
 

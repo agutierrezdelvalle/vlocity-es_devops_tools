@@ -8,7 +8,7 @@ Messages.importMessagesDirectory(__dirname);
 
 // Load the specific messages for this file. Messages from @salesforce/command, @salesforce/core,
 // or any library that is using the messages framework can also be loaded this way.
-const messages = Messages.loadMessages('vlocityestools', 'epcgkfix');
+const messages = Messages.loadMessages('vlocitydctools', 'epcgkfix');
 
 const fsExtra = require("fs-extra");
 const yaml = require('js-yaml');
@@ -39,9 +39,9 @@ export default class epcGlobalKeySync extends SfdxCommand {
   public static keySeparator = '|';
 
   public static examples = [
-  `$ sfdx vlocityestools:clean:epcgkfix -s myOrg@example.com -t myOrg2@example.com  -p cmt --pci  --aa 
+  `$ sfdx vlocitydctools:clean:epcgkfix -s myOrg@example.com -t myOrg2@example.com  -p cmt --pci  --aa 
   `,
-  `$ sfdx vlocityestools:clean:epcgkfix --source myOrg--target myOrg2 --aa
+  `$ sfdx vlocitydctools:clean:epcgkfix --source myOrg--target myOrg2 --aa
   `
   ];
 

@@ -10,16 +10,16 @@ const fsExtra = require("fs-extra");
 
 // Load the specific messages for this file. Messages from @salesforce/command, @salesforce/core,
 // or any library that is using the messages framework can also be loaded this way.
-const messages = Messages.loadMessages('vlocityestools', 'upsert');
+const messages = Messages.loadMessages('vlocitydctools', 'upsert');
 
 export default class upsert extends SfdxCommand {
 
   public static description = messages.getMessage('commandDescription');
 
   public static examples = [
-  `$ sfdx vlocityestools:data:upsert -u myOrg@example.com -f accounts.csv -o Account -i Name2__c
+  `$ sfdx vlocitydctools:data:upsert -u myOrg@example.com -f accounts.csv -o Account -i Name2__c
   `,
-  `$ sfdx vlocityestools:data:upsert --targetusername --csv accounts.csv --object Account --id Name2__c
+  `$ sfdx vlocitydctools:data:upsert --targetusername --csv accounts.csv --object Account --id Name2__c
   `
   ];
 

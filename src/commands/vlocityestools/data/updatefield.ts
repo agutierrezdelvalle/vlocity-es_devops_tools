@@ -8,16 +8,16 @@ Messages.importMessagesDirectory(__dirname);
 
 // Load the specific messages for this file. Messages from @salesforce/command, @salesforce/core,
 // or any library that is using the messages framework can also be loaded this way.
-const messages = Messages.loadMessages('vlocityestools', 'updatefield');
+const messages = Messages.loadMessages('vlocitydctools', 'updatefield');
 
 export default class updatefield extends SfdxCommand {
 
   public static description = messages.getMessage('commandDescription');
 
   public static examples = [
-  `$ sfdx vlocityestools:data:updatefield -u myOrg@example.com -o Product2 -f IsActive -v true
+  `$ sfdx vlocitydctools:data:updatefield -u myOrg@example.com -o Product2 -f IsActive -v true
   `,
-  `$ sfdx vlocityestools:data:updatefield --targetusername --object Product2 --field IsActive --value false --where "ProductCode LIKE 'VLO%'"
+  `$ sfdx vlocitydctools:data:updatefield --targetusername --object Product2 --field IsActive --value false --where "ProductCode LIKE 'VLO%'"
   `
   ];
 

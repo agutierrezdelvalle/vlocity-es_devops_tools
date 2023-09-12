@@ -8,16 +8,16 @@ Messages.importMessagesDirectory(__dirname);
 
 // Load the specific messages for this file. Messages from @salesforce/command, @salesforce/core,
 // or any library that is using the messages framework can also be loaded this way.
-const messages = Messages.loadMessages("vlocityestools", "deltapackagelocal");
+const messages = Messages.loadMessages("vlocitydctools", "deltapackagelocal");
 
 export default class deltaPackageLocal extends SfdxCommand {
 
   public static description = messages.getMessage("commandDescription");
 
   public static examples = [
-    `$ sfdx vlocityestools:sfsource:createdeltapackagelocal -h f2a6eee1b509c3edd33ab070148be48e41242846 -d force-app
+    `$ sfdx vlocitydctools:sfsource:createdeltapackagelocal -h f2a6eee1b509c3edd33ab070148be48e41242846 -d force-app
   `,
-    `$ sfdx vlocityestools:sfsource:createdeltapackagelocal --hash f2a6eee1b509c3edd33ab070148be48e41242846 --sourcefolder salesforce_sfdx
+    `$ sfdx vlocitydctools:sfsource:createdeltapackagelocal --hash f2a6eee1b509c3edd33ab070148be48e41242846 --sourcefolder salesforce_sfdx
   `
   ];
 

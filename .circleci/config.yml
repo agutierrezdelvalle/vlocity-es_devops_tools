@@ -46,7 +46,7 @@ jobs:
 
 workflows:
   version: 2
-  "vlocityEStools":
+  "vlocitydctools":
     jobs:
       - node-latest
       - node-8

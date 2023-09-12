@@ -7,19 +7,19 @@ Messages.importMessagesDirectory(__dirname);
 
 // Load the specific messages for this file. Messages from @salesforce/command, @salesforce/core,
 // or any library that is using the messages framework can also be loaded this way.
-const messages = Messages.loadMessages("vlocityestools", "deltapackage");
+const messages = Messages.loadMessages("vlocitydctools", "deltapackage");
 
 export default class deltaPackage extends SfdxCommand {
   public static description = messages.getMessage("commandDescription");
 
   public static examples = [
-    `$ sfdx vlocityestools:sfsource:createdeltapackage -u myOrg@example.com -p cmt -d force-app
+    `$ sfdx vlocitydctools:sfsource:createdeltapackage -u myOrg@example.com -p cmt -d force-app
   `,
-    `$ sfdx vlocityestools:sfsource:createdeltapackage --targetusername myOrg@example.com --package ins --sourcefolder force-app
+    `$ sfdx vlocitydctools:sfsource:createdeltapackage --targetusername myOrg@example.com --package ins --sourcefolder force-app
   `,
-    `$ sfdx vlocityestools:sfsource:createdeltapackage --targetusername myOrg@example.com --package ins --sourcefolder force-app --gitcheckkey EPC
+    `$ sfdx vlocitydctools:sfsource:createdeltapackage --targetusername myOrg@example.com --package ins --sourcefolder force-app --gitcheckkey EPC
   `,
-    `$ sfdx vlocityestools:sfsource:createdeltapackage --targetusername myOrg@example.com --sourcefolder force-app --gitcheckkeycustom VBTDeployKey --customsettingobject DevOpsSettings__c
+    `$ sfdx vlocitydctools:sfsource:createdeltapackage --targetusername myOrg@example.com --sourcefolder force-app --gitcheckkeycustom VBTDeployKey --customsettingobject DevOpsSettings__c
   `
   ];
 

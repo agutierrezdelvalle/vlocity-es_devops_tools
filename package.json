@@ -1,9 +1,9 @@
 {
-  "name": "vlocityestools",
-  "description": "Vlocity ES DevOps Tools",
-  "version": "0.24.5",
-  "author": "Juan Garcia",
-  "bugs": "https://github.com/jfgarcia268/vlocity-es_devops_tools/issues",
+  "name": "vlocitydctools",
+  "description": "Vlocity ES DC Tools",
+  "version": "0.0.1",
+  "author": "Antonio Gutiérrez",
+  "bugs": "https://github.com/agutierrezdelvalle/vlocity-es_devops_tools/issues",
   "dependencies": {
     "@oclif/command": "^1",
     "@oclif/config": "^1",
@@ -38,7 +38,7 @@
   "engines": {
     "node": ">=10.10.0"
   },
-  "homepage": "https://github.com/jfgarcia268/vlocity-es_devops_tools",
+  "homepage": "https://github.com/agutierrezdelvalle/vlocity-es_devops_tools",
   "keywords": [
     "sfdx-plugin"
   ],
@@ -47,28 +47,28 @@
     "commands": "./lib/commands",
     "bin": "sfdx",
     "topics": {
-      "vlocityestools": {
+      "vlocitydctools": {
         "description": "VlocityeESTools distributes certain DevOps Utilities for a Salesforce/Vlocity Project. This tool is not an Official tool from Vlocity or Salesforce. Use it at your own risk."
       },
-      "vlocityestools:clean": {
+      "vlocitydctools:clean": {
         "description": "Cleaning Commands"
       },
-      "vlocityestools:compare": {
+      "vlocitydctools:compare": {
         "description": "Comparison Tools"
       },
-      "vlocityestools:auth": {
+      "vlocitydctools:auth": {
         "description": "Auth Tools"
       },
-      "vlocityestools:sfsource": {
+      "vlocitydctools:sfsource": {
         "description": "Salesforce Source Tools"
       },
-      "vlocityestools:data": {
+      "vlocitydctools:data": {
         "description": "Data Tools"
       },
-      "vlocityestools:jobs": {
+      "vlocitydctools:jobs": {
         "description": "Execute Jobs"
       },
-      "vlocityestools:copado": {
+      "vlocitydctools:copado": {
         "description": "Copado Extras"
       }
     },
@@ -76,7 +76,7 @@
       "@oclif/plugin-help"
     ]
   },
-  "repository": "jfgarcia268/vlocity-es_devops_tools",
+  "repository": "agutierrezdelvalle/vlocity-es_devops_tools",
   "scripts": {
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "tslint -p test -t stylish",

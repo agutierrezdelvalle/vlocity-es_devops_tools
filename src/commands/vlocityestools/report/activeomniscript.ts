@@ -7,16 +7,16 @@ Messages.importMessagesDirectory(__dirname);
 
 // Load the specific messages for this file. Messages from @salesforce/command, @salesforce/core,
 // or any library that is using the messages framework can also be loaded this way.
-const messages = Messages.loadMessages('vlocityestools', 'activeos');
+const messages = Messages.loadMessages('vlocitydctools', 'activeos');
 
 export default class activeOmniScripts extends SfdxCommand {
 
   public static description = messages.getMessage('commandDescription');
 
   public static examples = [
-  `$ sfdx vlocityestools:report:activeomniscript -u myOrg@example.com -p cmt
+  `$ sfdx vlocitydctools:report:activeomniscript -u myOrg@example.com -p cmt
   `,
-  `$ sfdx vlocityestools:report:activeomniscript  --targetusername myOrg@example.com --package ins
+  `$ sfdx vlocitydctools:report:activeomniscript  --targetusername myOrg@example.com --package ins
   `
   ];
 

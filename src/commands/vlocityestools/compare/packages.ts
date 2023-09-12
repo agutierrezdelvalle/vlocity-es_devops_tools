@@ -7,7 +7,7 @@ Messages.importMessagesDirectory(__dirname);
 
 // Load the specific messages for this file. Messages from @salesforce/command, @salesforce/core,
 // or any library that is using the messages framework can also be loaded this way.
-const messages = Messages.loadMessages('vlocityestools', 'packagecompare');
+const messages = Messages.loadMessages('vlocitydctools', 'packagecompare');
 
 const path = require('path');
 const dircompare = require('dir-compare');
@@ -18,9 +18,9 @@ export default class compareFolders extends SfdxCommand {
   public static description = messages.getMessage('commandDescription');
 
   public static examples = [
-  `$ sfdx vlocityestools:compare:packages -s vlocity1 -t vlocity2
+  `$ sfdx vlocitydctools:compare:packages -s vlocity1 -t vlocity2
   `,
-  `$ sfdx vlocityestools:compare:packages --folder1 vlocity1 --folder2 vlocity2
+  `$ sfdx vlocitydctools:compare:packages --folder1 vlocity1 --folder2 vlocity2
   `
   ];
 

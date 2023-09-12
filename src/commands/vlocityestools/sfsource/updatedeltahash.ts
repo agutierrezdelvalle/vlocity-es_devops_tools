@@ -7,17 +7,17 @@ Messages.importMessagesDirectory(__dirname);
 
 // Load the specific messages for this file. Messages from @salesforce/command, @salesforce/core,
 // or any library that is using the messages framework can also be loaded this way.
-const messages = Messages.loadMessages("vlocityestools", "updatedeltahash");
+const messages = Messages.loadMessages("vlocitydctools", "updatedeltahash");
 
 export default class updateDeltaHash extends SfdxCommand {
   public static description = messages.getMessage("commandDescription");
 
   public static examples = [
-    `$ sfdx vlocityestools:sfsource:updatedeltahash  -c DevOpsSettings__c -v DeployKey -u myOrg@example.com
+    `$ sfdx vlocitydctools:sfsource:updatedeltahash  -c DevOpsSettings__c -v DeployKey -u myOrg@example.com
    `,
-    `$ sfdx vlocityestools:sfsource:updatedeltahash  --customsettingobject DevOpsSettings__c --gitcheckkeycustom DeployKey --targetusername myOrg@example.com
+    `$ sfdx vlocitydctools:sfsource:updatedeltahash  --customsettingobject DevOpsSettings__c --gitcheckkeycustom DeployKey --targetusername myOrg@example.com
    `,
-    `$ sfdx vlocityestools:sfsource:updatedeltahash  --customsettingobject DevOpsSettings__c --gitcheckkeycustom DeployKey --targetusername myOrg@example.com --customhash 0603ab92ff7cf9adf7ca10228807f6bb6b57a894
+    `$ sfdx vlocitydctools:sfsource:updatedeltahash  --customsettingobject DevOpsSettings__c --gitcheckkeycustom DeployKey --targetusername myOrg@example.com --customhash 0603ab92ff7cf9adf7ca10228807f6bb6b57a894
    `,
   ];
 

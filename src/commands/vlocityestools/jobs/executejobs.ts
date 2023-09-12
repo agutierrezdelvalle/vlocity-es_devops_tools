@@ -11,16 +11,16 @@ const yaml = require('js-yaml');
 
 // Load the specific messages for this file. Messages from @salesforce/command, @salesforce/core,
 // or any library that is using the messages framework can also be loaded this way.
-const messages = Messages.loadMessages('vlocityestools', 'executejobs');
+const messages = Messages.loadMessages('vlocitydctools', 'executejobs');
 
 export default class executejobs extends SfdxCommand {
 
   public static description = messages.getMessage('commandDescription');
 
   public static examples = [
-  `$ sfdx vlocityestools:jobs:executejobs -u myOrg@example.com -j jobs.yaml -p 20
+  `$ sfdx vlocitydctools:jobs:executejobs -u myOrg@example.com -j jobs.yaml -p 20
   `,
-  `$ sfdx vlocityestools:jobs:executejobs --targetusername myOrg@example.com  --jobs jobs.yaml --pooltime 30
+  `$ sfdx vlocitydctools:jobs:executejobs --targetusername myOrg@example.com  --jobs jobs.yaml --pooltime 30
   `
   ];
 

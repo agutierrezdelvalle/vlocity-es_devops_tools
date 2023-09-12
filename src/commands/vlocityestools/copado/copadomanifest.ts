@@ -10,16 +10,16 @@ const yaml = require('js-yaml');
 
 // Load the specific messages for this file. Messages from @salesforce/command, @salesforce/core,
 // or any library that is using the messages framework can also be loaded this way.
-const messages = Messages.loadMessages('vlocityestools', 'copadomanifest');
+const messages = Messages.loadMessages('vlocitydctools', 'copadomanifest');
 
 export default class copadomanifest extends SfdxCommand {
 
   public static description = messages.getMessage('commandDescription');
 
   public static examples = [
-  `$ sfdx vlocityestools:copado:copadomanifest -p package.xml
+  `$ sfdx vlocitydctools:copado:copadomanifest -p package.xml
   `,
-  `$ sfdx vlocityestools:copado:copadomanifest --package package.xml --username User123 --vlocity
+  `$ sfdx vlocitydctools:copado:copadomanifest --package package.xml --username User123 --vlocity
   `
   ];
 
