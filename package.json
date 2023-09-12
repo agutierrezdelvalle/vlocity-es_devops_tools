@@ -1,7 +1,7 @@
 {
   "name": "vlocitydctools",
   "description": "Vlocity DC Tools",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Antonio Gutiérrez",
   "bugs": "https://github.com/antgutdel/vlocity-es_devops_tools/issues",
   "dependencies": {
